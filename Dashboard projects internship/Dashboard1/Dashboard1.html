@@ -8,7 +8,6 @@
       margin: 0;
       box-sizing: border-box;
       font-family:15px Arial, sans-serif ;
-      color: white;
     }
 
     .relative {
@@ -23,18 +22,17 @@
       left: 8px;
       transform: translateY(-50%);
     }
-    
-
-    aside {
-      position: relative;
-      z-index: 1;
-      border-right: 1px solid rgba(255, 255, 255, 0.12);
-    }
 
     .flex-1 {
       flex: 1;
       color: white;
       padding: 0 30px;
+    }
+
+    aside {
+      position: relative;
+      z-index: 1;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .grid-container {
@@ -44,11 +42,12 @@
       min-height: 100vh;
       border-color: white;
       line-height: 2.5;
+      color: white;
 
       & a {
         text-decoration: none;
-
-        :hover {
+        color: white;
+      :hover {
           background-color: rgb(177, 177, 177);
         }
       }
@@ -95,7 +94,8 @@
         font-size: 15px;
         cursor: pointer;
         padding: 8px;
-        border: none
+        border: none;
+        color: white;
       }
 
       .dropdown-content {
@@ -161,9 +161,18 @@
     .grid-main{
       display: grid;
       grid-template-columns: repeat(8,1fr);
-      gap:24px;
-      margin-bottom: 40px;
+      gap:5px;
+      margin-bottom: 25px;
       padding: 0.25rem 1rem;
+    }
+    .main.items{
+      border-radius: 12px;
+      border-color: 2xp solid dimgray;
+      padding: 15px;
+      box-shadow: 0 2px 8px lightgrey;
+      &:hover{
+        box-shadow: 0 2px 8px  rgb(184, 184, 184);
+      }
     }
   
 
@@ -198,9 +207,9 @@
 
       <div class="le-bo-col">
         <ul style="list-style-type: none">
-          <li><a href="#">Setting</a></li></a>
-          <li><a href="#">Help<img src="" class="help-img"></a></li>
-          <li><a href="#">Profile<img src="" class="profile-img"></a></li>
+          <li><a href="#" class="flex-1">Setting</a></li></a>
+          <li><a href="#" class="flex-1">Help<img src="" class="help-img"></a></li>
+          <li><a href="#" class="flex-1">Profile<img src="" class="profile-img"></a></li>
         </ul>
       </div>
     </aside>
