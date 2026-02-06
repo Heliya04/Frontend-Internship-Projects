@@ -7,7 +7,7 @@
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        font-family: 15px Arial, sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     body{
@@ -17,40 +17,47 @@
 
     .flex-1 {
       flex: 1;
-      color: rgb(8, 99, 8)
-    }
-
-    aside {
-      position: relative;
-      z-index: 1;
-      background-color: rgb(236, 236, 236);
-      & a{
-            text-decoration: none;
-            color: gray ;
-        }
+      color: rgb(8, 99, 8);
+      padding: 0 30px;
     }
 
     .grid-container{
         display: grid;
         grid-template-columns: 180px 1fr;
         min-height: 100vh;        
-        border-color: black;
+        border-color: white;
         line-height: 2.5;
     }
-    
+
+    aside {
+        position: relative;
+        z-index: 1;
+        background-color: rgb(236, 236, 236);
+        & div{
+            color:rgb(184, 182, 182);
+            padding: 0 20px;
+        }
+        & a{
+            text-decoration: none;
+            color: rgb(98, 110, 105);
+            padding: 0 30px;
+        }
+    }
+
 </style>
 </head>
 <body>
     <div class="grid-container">
         <aside class="sidebar">
-            <h1 class="flex-1">Flup</h1>
+            <h1 class="flex-1"><img src="#" class="logo_img">Flup</h1>
+            <div>MARKETING</div>
             <ul style="list-style-type: none">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Marketplace</a></li>
-                <li><a href="#">Orders</a></li>
-                <li><a href="#">Tracking</a></li>
-                <li><a href="#">Customers</a></li>
-                <li><a href="#">Discounts</a></li>
+                <li><a href="#"><img src="#" class="">Dashboard</a></li>
+                <li><a href="#"><img src="#" class="">Marketplace</a></li>
+                <li><a href="#"><img src="#" class="">Orders</a></li>
+                <li><a href="#"><img src="#" class="">Tracking</a></li>
+                <li><a href="#"><img src="#" class="">Customers</a></li>
+                <li><a href="#"><img src="#" class="">Discounts</a></li>
             </ul>
         </aside>
     </div>
