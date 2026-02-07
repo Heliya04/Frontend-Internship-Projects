@@ -4,10 +4,17 @@
 <head>
   <style>
     * {
-      padding: 0;
       margin: 0;
+      padding: 0;
       box-sizing: border-box;
-      font-family:15px Arial, sans-serif ;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      background-color: #101010;
+      color: white;
+      min-height: 100vh;
     }
 
     .relative {
@@ -25,114 +32,109 @@
 
     .flex-1 {
       flex: 1;
-      color: white;
-      padding: 0 30px;
     }
 
-    aside {
-      position: relative;
-      z-index: 1;
-      border-right: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .grid-container {
+    .dashboard {
       display: grid;
       grid-template-columns: 180px 1fr;
-      background-color: #101010;
       min-height: 100vh;
-      border-color: white;
-      line-height: 2.5;
-      color: white;
-
-      & a {
-        text-decoration: none;
-        color: white;
-      :hover {
-          background-color: rgb(177, 177, 177);
-        }
-      }
-
-      .headers {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .left-column {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        & a:hover {
-          background-color: rgb(177, 177, 177);
-        }
-      }
-
-      .le-bo-col {
-        display: flex;
-        width: 100%;
-
-        & ul a:nth-child(2) {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
-      }
-
-      .dropdown {
-        position: relative;
-        display: inline-block;
-
-        &:focus div {
-          display: none;
-        }
-      }
-
-      .dropdown-button {
-        display: inline-block;
-        background-color: transparent;
-        font-size: 15px;
-        cursor: pointer;
-        padding: 8px;
-        border: none;
-        color: white;
-      }
-
-      .dropdown-content {
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: black;
-
-        &.show {
-          display: flex;
-        }
-
-        & a {
-          padding: 12px 16px;
-          text-decoration: none;
-        }
-      }
     }
 
-    .headers navbar {
-      height: 60px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .headers navbar, .logo_img {
+    .sidebar {
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      background-color: #101010;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+
+    .sidebar-section h2 {
+      padding: 0 30px;
+      margin-bottom: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+
+      &:focus div {
+        display: none;
+      }
+    }
+
+    .dropdown-button {
+      display: inline-block;
+      background-color: transparent;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 8px;
+      margin-left: 50px;
+      border: none;
+      color: white;
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: black;
+      margin-left: 20px;
+
+      &.show {
+        display: flex;
+      }
 
       & a {
+        padding: 12px 16px;
         text-decoration: none;
+        color: white;
+      }
+      & a:hover{
+        background-color: rgba(255, 255, 255, 0.1);
       }
 
-      & a:hover {
-        background-color: rgb(177, 177, 177);
+    }
+
+    .sidebar-nav li {
+      padding: 0 30px;
+      & a{
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 8px 0;
       }
+      & a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  
+    .main-content {
+    padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 30px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     .help-img {
@@ -146,10 +148,10 @@
       background-size: cover;
       height: 40px;
       width: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.32);
-      border-radius: 8px;
+       border: 1px solid rgba(255, 255, 255, 0.32);
+     border-radius: 8px;
     }
-
+  
     #search {
       padding-left: 36px;
       background-color: rgba(255, 255, 255, 0.12);
@@ -158,21 +160,23 @@
       height: 37px;
     }
 
-    .grid-main{
+    .categories-grid {
       display: grid;
-      grid-template-columns: repeat(8,1fr);
-      gap:5px;
-      margin-bottom: 25px;
-      padding: 0.25rem 1rem;
+      grid-template-columns: repeat(8, 1fr));
+      gap: 15px;
     }
-    .main.items{
+
+    .category-card {
+      background-color: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
-      border-color: 2xp solid dimgray;
-      padding: 15px;
-      box-shadow: 0 2px 8px lightgrey;
-      &:hover{
-        box-shadow: 0 2px 8px  rgb(184, 184, 184);
-      }
+      padding: 20px;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .category-card:hover {
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.08);
     }
   
 
@@ -181,11 +185,9 @@
 
 <body>
 
-  <div class="grid-container">
-
-    <aside class="left-column">
-
-      <div class="flex-1">
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-section">
         <h2>Dashboard</h2>
 
         <div class="dropdown">
@@ -197,69 +199,57 @@
           </div>
         </div>
 
-        <ul style="list-style-type: none">
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Bookmarks</a></li>
-          <li><a href="#">Downloads</a></li>
-          <li><a href="#">Notifications</a></li>
-        </ul>
+        <nav class="sidebar-nav">
+          <ul style="list-style-type: none;">
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Bookmarks</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">Notifications</a></li>
+          </ul>
+        </nav>
       </div>
-
-      <div class="le-bo-col">
-        <ul style="list-style-type: none">
-          <li><a href="#" class="flex-1">Setting</a></li></a>
-          <li><a href="#" class="flex-1">Help<img src="" class="help-img"></a></li>
-          <li><a href="#" class="flex-1">Profile<img src="" class="profile-img"></a></li>
-        </ul>
+      
+      <div class="sidebar-section">
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Help<img src="" class="help-img"></a></li>
+            <li><a href="#">Profile<img src="" class="profile-img"></a></li>
+          </ul>
+        </nav>
       </div>
     </aside>
 
-    <main>
+    
+    <main class="main-content">
       <header>
-        <ul style="list-style-type: none" class="headers">
-          <navbar>
+        <nav class="navbar">
             <div class="logo_img"></div>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-            <form>
-              <div class="relative">
+            <ul class="nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+            <div class="search-container">
                 <img src="./photo/search_icon.png" class="absolute">
-                <input id="search" name="search" type="text" placeholder="search" />
-              </div>
-            </form>
-          </navbar>
-        </ul>
+                <input type="text" class="search-input" placeholder="Search...">
+          </div>
+        </nav>
       </header>
 
-      <div class="grid-main">
-        <div class="main-items">
-          <div class="flex-1">Nature</div>
-        </div>
-        <div class="main-items">
-          <div class="flex-1">Technology</div>
-        </div>
-        <div class="main-items">
-          <div class="flex-1">Animals</div>
-        </div>
-        <div class="main-items">
-          <div class="flex-1">Food</div>
-        </div>
-        <div class="main-items">
-          <div class="flex-1">Building</div>
-        </div>
-        <div class="main-items">
-          <div class="flex-1">Sport</div>
-        </div>
-        <div class="main-items">
-          <div class="flex-1">Car</div>
-        </div>
-        <div class="main-items">
-          <div class="flex-1">More</div>
-        </div>
+        <div class="categories-grid">
+        <div class="category-card">Nature</div>
+        <div class="category-card">Technology</div>
+        <div class="category-card">Animals</div>
+        <div class="category-card">Food</div>
+        <div class="category-card">Building</div>
+        <div class="category-card">Sport</div>
+        <div class="category-card">Car</div>
+        <div class="category-card">More</div>
       </div>
     </main>
+  </div>
 
 
     <script>
