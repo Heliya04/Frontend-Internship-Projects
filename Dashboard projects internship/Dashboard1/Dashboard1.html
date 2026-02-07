@@ -165,7 +165,7 @@
     }
     .search-input{
       color:white;
-      background-color: rgba(255, 255, 255, 0.12);
+      background-color:transparent;
       border:none;
     }
 
@@ -173,21 +173,17 @@
       display: grid;
       grid-template-columns: repeat(8, 1fr);
       gap: 15px;
-      width:60%;
     }
 
     .category-card {
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color:rgba(255, 255, 255, 0.12);
       border-radius: 50vh;
-      padding: 10px;
+      padding: 5px;
       text-align: center;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .category-card:hover {
+      &:hover {
       box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-      background-color: rgba(255, 255, 255, 0.08);
     }
+  }
   
 
   </style>
@@ -233,6 +229,7 @@
     
     <main class="main-content">
       <header>
+
         <nav class="navbar">
             <div class="logo_img"></div>
             <ul class="nav-links">
@@ -244,20 +241,22 @@
             <div class="search-container">
                 <img src="#" class="absolute">
                 <input type="text" class="search-input" placeholder="Search...">
-          </div>
+            </div>
         </nav>
+
       </header>
 
         <div class="categories-grid">
-          <div class="category-card">Nature</div>
-          <div class="category-card">Technology</div>
-          <div class="category-card">Animals</div>
-          <div class="category-card">Food</div>
-          <div class="category-card">Building</div>
-          <div class="category-card">Sport</div>
-          <div class="category-card">Car</div>
-          <div class="category-card">More</div>
-      </div>
+            <div class="category-card"><img src="#">Nature</div>
+            <div class="category-card"><img src="#">Technology</div>
+            <div class="category-card"><img src="#">Animals</div>
+            <div class="category-card"><img src="#">Food</div>
+            <div class="category-card"><img src="#">Building</div>
+            <div class="category-card"><img src="#">Sport</div>
+            <div class="category-card"><img src="#">Car</div>
+            <div class="category-card"><img src="#">More</div>
+        </div>
+
     </main>
   </div>
 
