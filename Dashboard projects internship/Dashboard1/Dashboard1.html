@@ -118,7 +118,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 50px;
       padding: 20px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       margin-bottom: 30px;
@@ -126,9 +125,10 @@
 
     .nav-links {
       display: flex;
-      gap: 20px;
       list-style: none;
-      & a{
+      width: 500px;
+      justify-content: space-evenly;
+        & a{
       color: white;
       text-decoration: none;
       padding: 8px 12px;
@@ -173,12 +173,13 @@
       display: grid;
       grid-template-columns: repeat(8, 1fr);
       gap: 15px;
+      width:60%;
     }
 
     .category-card {
       background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 20px;
+      border-radius: 50vh;
+      padding: 10px;
       text-align: center;
       transition: box-shadow 0.3s ease;
     }
@@ -248,14 +249,14 @@
       </header>
 
         <div class="categories-grid">
-        <div class="category-card">Nature</div>
-        <div class="category-card">Technology</div>
-        <div class="category-card">Animals</div>
-        <div class="category-card">Food</div>
-        <div class="category-card">Building</div>
-        <div class="category-card">Sport</div>
-        <div class="category-card">Car</div>
-        <div class="category-card">More</div>
+          <div class="category-card">Nature</div>
+          <div class="category-card">Technology</div>
+          <div class="category-card">Animals</div>
+          <div class="category-card">Food</div>
+          <div class="category-card">Building</div>
+          <div class="category-card">Sport</div>
+          <div class="category-card">Car</div>
+          <div class="category-card">More</div>
       </div>
     </main>
   </div>
