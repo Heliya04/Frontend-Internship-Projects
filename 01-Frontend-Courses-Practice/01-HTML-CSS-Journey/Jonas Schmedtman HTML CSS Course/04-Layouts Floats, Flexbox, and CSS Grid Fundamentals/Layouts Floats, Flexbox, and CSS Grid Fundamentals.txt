@@ -92,3 +92,38 @@ CSS Grid Layout (2D):
 +----------------------+---------+
 |         Footer                 |
 +--------------------------------+
+
+Float Layout Example:
++----------------------------------+
+| [Image] Text wraps around the    |
+|         floated image. The text  |
+|         flows beside and under   |
+|         the image naturally.     |
++----------------------------------+
+
+Flexbox Layout (1D):
+[Link 1] [Link 2] [Link 3] [Link 4]
+
+============================================
+NORMAL FLOW VS ABSOLUTE VS FLOAT
+============================================
+
+1. NORMAL FLOW (Default)
+   - Elements are "in flow"
+   - Elements are laid out according to their order in the HTML code
+   - Each element takes up its own space
+   - This is the default positioning (position: relative)
+
+2. ABSOLUTE POSITIONING
+   - Element is removed from the normal flow ("out of flow")
+   - No impact on surrounding elements
+   - Might overlap other elements
+   - Use top, bottom, left, right to position
+   - Positioned relative to nearest positioned ancestor
+   - position: absolute
+
+3. FLOATS
+   - Element is removed from the normal flow ("out of flow")
+   - Text and inline elements will wrap around the floated element
+   - The container will NOT adjust its height to the element
+   - float: left or float: right
