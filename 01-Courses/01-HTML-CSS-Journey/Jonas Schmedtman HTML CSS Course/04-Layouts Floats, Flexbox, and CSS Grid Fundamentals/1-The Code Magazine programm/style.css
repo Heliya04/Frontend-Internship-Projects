@@ -21,7 +21,7 @@ h4 {
 
 /* ----- The Container (centers everything) ----- */
 .container {
-  width: 800px;
+  width: 1300px;
   margin: 0 auto; /* Centers the box horizontally */
 }
 
@@ -94,6 +94,8 @@ a:active {
 /* ----- Article (Main Content) ----- */
 article {
   margin-bottom: 60px; /* Space below the article */
+  width: 900px;
+  float: left;
 }
 
 .post-header {
@@ -189,6 +191,8 @@ aside {
   border-bottom: 5px solid #1098ad;
   padding: 50px 0; /* Space inside: top/bottom */
   width: 500px;
+  width: 300px;
+  float: right;
 }
 
 h4 {
@@ -209,4 +213,5 @@ h4 {
 
 .copyright {
   font-size: 16px;
+  clear: both;
 }
