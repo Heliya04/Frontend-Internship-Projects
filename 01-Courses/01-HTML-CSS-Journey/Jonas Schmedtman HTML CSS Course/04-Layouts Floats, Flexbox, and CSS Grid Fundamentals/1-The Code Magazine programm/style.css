@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Width includes padding & border */
 }
 
 /* ----- Styles for the whole page ----- */
@@ -189,21 +190,22 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0; /* Space inside: top/bottom */
-  width: 500px;
+  padding: 50px 40px; /* Space inside: top/bottom */
   width: 300px;
-  float: right;
+  float: right; /* Floats to the right side */
 }
 
 h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 /* Remove default bullet points from list */
 .related-post {
   list-style: none;
+  margin-left: 0;
 }
 
 .related-author {
@@ -213,5 +215,5 @@ h4 {
 
 .copyright {
   font-size: 16px;
-  clear: both;
+  clear: both; /* Prevents footer from floating up */
 }
