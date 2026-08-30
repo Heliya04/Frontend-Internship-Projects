@@ -128,4 +128,23 @@ NORMAL FLOW VS ABSOLUTE VS FLOAT
    - The container will NOT adjust its height to the element
    - float: left or float: right
 
+============================================
+KEY TAKEAWAYS
+============================================
 
+1. Float is the old way – you'll see it in legacy code, but don't use it 
+   for new projects.
+
+2. Flexbox is for ONE-DIMENSIONAL layouts (row OR column). Use it for 
+   components like navigation, cards, buttons.
+
+3. CSS Grid is for TWO-DIMENSIONAL layouts (rows AND columns). Use it for 
+   the overall page structure or complex components.
+
+4. When using floats:
+   - Always use a clearfix on parent containers
+   - Always use clear: both on the footer
+   - Make sure the container width is large enough for all floated elements
+
+5. Modern best practice: Use Flexbox for components and CSS Grid for page 
+   layout.
