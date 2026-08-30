@@ -149,6 +149,50 @@ KEY TAKEAWAYS
 5. Modern best practice: Use Flexbox for components and CSS Grid for page 
    layout.
 
+============================================
+THE BOX MODEL WITH BOX-SIZING: BORDER-BOX
+============================================
+
+WHAT IS THE BOX MODEL?
+----------------------
+Every element on your page is a BOX. It has 4 layers:
+
+      +-----------------------------------+
+      |         MARGIN (outside)          |  ← Space between elements
+      |   +-----------------------------+ |
+      |   |         BORDER             | |  ← Line around the element
+      |   |   +---------------------+ | |
+      |   |   |      PADDING        | | |  ← Space inside (between border & content)
+      |   |   |   +-------------+ | | | |
+      |   |   |   |  CONTENT    | | | | |  ← The actual text/image
+      |   |   |   +-------------+ | | | | |
+      |   |   +---------------------+ | | |
+      |   +-----------------------------+ |
+      +-----------------------------------+
+
+Think of it like a picture frame:
+- CONTENT = the photo
+- PADDING = the white mat board (between photo and frame)
+- BORDER = the frame itself
+- MARGIN = space between frames on the wall
+
+============================================
+WHY BORDER-BOX IS BETTER
+============================================
+
+1. Predictable sizing
+   - What you set is what you get
+   - 300px width = 300px final width
+
+2. Easier layout calculations
+   - No need to add padding and border to width
+   - Simple math!
+
+3. More intuitive
+   - Makes sense that "width" means total width
+
+4. Used by almost all modern CSS frameworks
+   - Bootstrap, Tailwind, etc.
 
 
 
